@@ -13,9 +13,9 @@ export default async function CharacterPage(){
         <ul>
             {characters.map((char)=>(
                 <li key={char.id}>
-                    <div className="max-w-xs bg-slate-900 rounded overflow-hidden shadow-lg m-4 items-center justify-center">
-                        <h1 className="text-semibold items-center flex justify-center">{char.name}</h1>
-                        <Image src={char.img} height={150} width={150} className="bg-slate-800 "/>
+                    <div className="max-w-xs bg-slate-900 rounded-sm overflow-hidden shadow-lg mx-1 my-8 p-4 justify-center flex flex-col items-center ">
+                        <h1 className="text-2x1 text-semibold mt-4">{char.name}</h1>
+                        <Image src={char.img} height={150} width={150} className="bg-slate-800 w-48 h-48 objetc.cover my-4"/>
                         <h2 className="text-center felx justify-center">Eyes Color: {char.eye_color}</h2>
                         <h2 className="text-center justify-center">Gender: {char.gender}</h2>
                     </div>
