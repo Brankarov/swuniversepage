@@ -1,10 +1,9 @@
 import Image from "next/image";
-import { Film } from "@/interfaces/filmsInterface";
+import { Film} from "@/interfaces/filmsInterface";
 
 async function fetchFilms() {
     const res = await fetch('https://swapi.dev/api/films');
     const data = await res.json();
-    console.log(data)
     return data.results;
 }
 
