@@ -5,5 +5,8 @@ export interface Character {
     img?: string;
     eye_color?: string;
     gender?: string;
-  
+    birthyear: string;
+    haircolor: string;
+    skincolor: string;
+    mass: string;
   }

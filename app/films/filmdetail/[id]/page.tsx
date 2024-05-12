@@ -1,10 +1,13 @@
+import { Film } from "@/interfaces/filmsInterface";
 import Image from "next/image";
+import {FilmMapper} from "@/Data/funtions/FilmMapper"
+import { FetchCharacterData } from "@/Data/funtions/FetchCharacterData";
 
 async function fetchFilmbyId() {
     const res = await fetch('https://swapi.dev/api/films/1/');
     const data = await res.json();
-    console.log(data);
-    return data;
+    const film = await FilmMapper(data);
+    return film;
 }
 
 export default async function FilmDetailPage(){
@@ -19,7 +22,7 @@ export default async function FilmDetailPage(){
                 <p className="text-sm fopy-2">{film.opening_crawl}</p>
                 <h3 className="text-sm py-2"> Cast:</h3>
                 <ul className="">
-                    {film.characters.map((char)=>(
+                    {film.characters.map((char : any)=>(
                         <li key={char.id} className="py-4 flex">
                             <Image src={char.img} alt="char img" className="h-20 w-20 rounder-full"/>
                             <div className="ml-3">
