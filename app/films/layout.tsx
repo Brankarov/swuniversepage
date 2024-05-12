@@ -9,7 +9,7 @@ export default async function Layout({children} : {children : ReactNode}){
     return(
         <div className="flex h-screen">
             <div className="w-1/2 bg-slate-800 p-4 overflow-y-auto">
-                <LayoutListFil films={films}/>
+             <LayoutListFil films={films} />
             </div>
             <div className="w-1/2 bg-slate-700 p-4 overflow-y-auto">
                 children here

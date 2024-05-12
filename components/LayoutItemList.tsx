@@ -5,6 +5,7 @@ import Image from "next/image";
  
 
 export default function LayaoutItemList({film} : LayaoutFilmItemListProps){
+    console.log(film);
     return(
         <li key={film.id} className="bg-slate-900 mb-2 p-2">
             <article className="flex items-start spacex-6 p-6">
