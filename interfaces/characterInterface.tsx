@@ -9,4 +9,5 @@ export interface Character {
     haircolor: string;
     skincolor: string;
     mass: string;
+    height: string;
   }
