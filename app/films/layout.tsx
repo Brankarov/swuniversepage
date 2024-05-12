@@ -1,10 +1,15 @@
+import LayoutListFil from "@/components/LayoutListFIlm";
 import { ReactNode } from "react";
+import { Film } from '@/interfaces/filmsInterface';
+import {FetchFilms} from '@/Data/funtions/FetchData/FetchFilms'
 
-export default function Layout({children} : {children : ReactNode}){
+
+export default async function Layout({children} : {children : ReactNode}){
+    const films : Film[] = await FetchFilms();
     return(
         <div className="flex h-screen">
             <div className="w-1/2 bg-slate-800 p-4 overflow-y-auto">
-                Layaout here
+                <LayoutListFil films={films}/>
             </div>
             <div className="w-1/2 bg-slate-700 p-4 overflow-y-auto">
                 children here
