@@ -10,4 +10,5 @@ export interface Character {
     skincolor: string;
     mass: string;
     height: string;
+    url: string;
   }

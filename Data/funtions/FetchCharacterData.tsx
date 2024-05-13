@@ -15,6 +15,7 @@ export async function FetchCharacterData(url: string): Promise<Character> {
         birthyear: data.birth_year,
         gender: data.gender,
         img: data.image,
-        height: data.height
+        height: data.height,
+        url: data.url
     };
 }
