@@ -6,6 +6,7 @@ export async function FetchCharacterData(url: string): Promise<Character> {
     const res = await fetch(url);
     const data = await res.json();
     const id : number = getEpisodeIdFromUrl(data.url);
+
     return {
         id: id,
         name: data.name,
