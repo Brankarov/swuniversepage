@@ -1,12 +1,13 @@
 import { Character } from '../../interfaces/characterInterface';
+import { getEpisodeIdFromUrl } from './getEpisodeIdFromUrl';
 
 export async function FetchCharacterData(url: string): Promise<Character> {
 
     const res = await fetch(url);
     const data = await res.json();
-  
+    const id : number = getEpisodeIdFromUrl(data.url);
     return {
-        id: data.url,
+        id: id,
         name: data.name,
         mass: data.mass,
         haircolor: data.hair_color,
