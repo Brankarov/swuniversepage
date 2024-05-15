@@ -39,7 +39,7 @@ export default function CharacterList({ characters }: CharacterListProps){
     return(
         <div>
             <div className="flex justify-center align-items-center">
-                <input type="text" placeholder="Search" value={search} onChange={handleSearch} className="block rounded-md border-solid  border border-inherit py-2 px-4 mb5"/>
+                <input type="text" placeholder="Search" value={search} onChange={handleSearch} className="block rounded-md border-solid  border border-inherit py-2 px-4 mb5 text-sm text-semibold text-black"/>
             </div>
             <ul className="bg-slate-900 flex flex-wrap">
                 <Suspense fallback={<div> Cargando characters</div>}>
