@@ -1,7 +1,8 @@
-import Image from "next/image";
-import {FilmMapper} from "@/Data/funtions/FilmMapper"
 import charpic from "@/public/Images/characters/charpic.avif"
 import bg4 from "@/public/Images/background/films/sw4.avif";
+import Image from "next/image";
+import {FilmMapper} from "@/Data/funtions/FilmMapper"
+import Link from "next/link";
 
 async function fetchFilmbyId(id: string) {
     const url : string = `https://swapi.dev/api/films/${id}/`;
@@ -29,7 +30,9 @@ export default async function FilmDetailPage({params} : {params: {id: string}}){
                             <Image src={charpic} alt="char img" width={50} height={50} className="rounded-full"/>
                             <div className="ml-3">
                                 <p className="text-sm font-medium text-gray-500">{char.name}</p>
-                                <p className="text-sm text-gray-600">see details{}</p>
+                                <Link href={`/characters/detail/${char.id}`}>
+                                    <p className="text-sm text-gray-600">see details{}</p>
+                                </Link>
                             </div>
                         </li>
                     ))}

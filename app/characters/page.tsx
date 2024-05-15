@@ -8,7 +8,7 @@ export default async function CharacterPage() {
   const charsRaw : rawCharacter[] = await GetAllCharacters();
   const chars : Character[] = CharacterMapper(charsRaw);
   return (
-    <div className="bg-gray-100">
+    <div className="bg-slate-800">
        <CharacterList characters={chars}/>
     </div>
   );
