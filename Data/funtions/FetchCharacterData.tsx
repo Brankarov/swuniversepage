@@ -16,7 +16,7 @@ export async function FetchCharacterData(url: string): Promise<Character> {
         eye_color: data.eye_color,
         birthyear: data.birth_year,
         gender: data.gender,
-        img: data.image,
+        img: "/public/Images/char_img.webp",
         height: data.height,
         url: data.url
     };

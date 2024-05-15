@@ -1,24 +1,30 @@
-import { GetAllCharacters } from "@/Data/funtions/FetchData/GetAllCharacters";
+"use client"
 import { Character } from "@/interfaces/characterInterface";
 import { Suspense, useEffect, useState } from "react";
 import CharacterItemList from "./CharacterItemList";
 
+interface CharacterListProps {
+    characters: Character[];
+}
 
-export default async function CharacterList(){
-    const chars : Character[] = await GetAllCharacters();
+export default function CharacterList({ characters }: CharacterListProps){
+    
     
     useEffect(()=>{
-        setFilteredData(chars);
+        setFilteredData(characters);
     }, []);
 
     const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) =>{
         setSearch(e.target.value)
         if(search.length > 1){
-            const filteredValues = chars.filter( row =>{
+            const filteredValues = characters.filter( row =>{
                 const rawGender = row.gender?.toLocaleLowerCase();
                 const rawEyes = row.eye_color?.toLocaleLowerCase();
                 const q = e.target.value.toLowerCase();
-                if(rawGender?.includes(q) || rawEyes?.includes(q)){
+                if(rawGender?.includes(q)){
+                    return rawGender === q;
+                }
+                if(rawEyes?.includes(q)){
                     return true
                 }
                 return false

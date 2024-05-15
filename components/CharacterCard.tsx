@@ -2,6 +2,7 @@
 import { Character } from "@/interfaces/characterInterface";
 import Image from "next/image";
 import { useState } from "react";
+import charimg from "@/public/Images/char_img.webp";
 
 export default function CharacterCard(character: Character){
     const [isOpen, setIsOpen] = useState(false);
@@ -9,13 +10,15 @@ export default function CharacterCard(character: Character){
         <div onClick={ () =>setIsOpen(!isOpen)}>
            {isOpen === false &&(
                <div>
-                <div className="bg-slate-700 p-1">
-                    <Image src={character.img || ""} alt={character.name || ""} width={75} height={75} className="p-1"/>
-                </div>
-                <div className="flex-1 pl-2">
-                    <h1 className="text-lg text-semibold">{character.name}</h1>
-                    <p className="text-sm">Eyes: {character.eye_color}</p>
-                    {character.gender!== "n/a" && character.gender !== "unknow" && (<p>Gender: {character.gender} </p>) }
+                <div className="bg-slate-800 p-1 flex ">
+                    <div className="flex items-center">
+                        <Image src={charimg} alt={character.name || ""} width={100} height={100} className="p-1 p-1 border border-yellow-500"/>
+                        <div className="flex-1 pl-2">
+                            <h1 className="text-lg text-semibold">{character.name}</h1>
+                            <p className="text-sm">Eyes: {character.eye_color}</p>
+                            {character.gender!== "n/a" && character.gender !== "unknow" && (<p>Gender: {character.gender} </p>) }
+                        </div>
+                    </div>
                 </div>
             </div>
             )}
