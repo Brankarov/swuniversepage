@@ -11,7 +11,7 @@ export default function MainNavBarLayaout()
                     </Link>
                 </div >
                 <div className="text-yellow-500 text-bold text-lg">
-                    <Link href={'/'} legacyBehavior className="p-2 bg-slate-900 text-yellow-500 mx-4">
+                    <Link href={'/'} legacyBehavior className="p-2 bg-slate-900 text-yellow-500 hover:text-yellow-700 focus:text-yellow-700 mx-4">
                         <a className="text-yellow">Star Wars Universe</a>
                     </Link>
                 </div>
