@@ -2,7 +2,9 @@
 import { Character } from "@/interfaces/characterInterface";
 import Image from "next/image";
 import { useState } from "react";
-import charimg from "@/public/Images/char_img.webp";
+import femaleimg from "@/public/Images/char_img.webp";
+import maleimg from "@/public/Images/film_img.avif";
+import androidimg from "@/public/Images/android.avif";
 
 export default function CharacterCard(character: Character){
     const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +14,7 @@ export default function CharacterCard(character: Character){
                <div>
                 <div className="bg-slate-800 p-1 flex ">
                     <div className="flex items-center">
-                        <Image src={charimg} alt={character.name || ""} width={100} height={100} className="p-1 p-1 border border-yellow-500"/>
+                        <Image src={character.gender === "male" ? maleimg : character.gender === "female" ? femaleimg : androidimg} alt={character.name || ""} width={100} height={100} className="p-1 p-1 border border-yellow-500"/>
                         <div className="flex-1 pl-2">
                             <h1 className="text-lg text-semibold">{character.name}</h1>
                             <p className="text-sm">Eyes: {character.eye_color}</p>
