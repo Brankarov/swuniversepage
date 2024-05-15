@@ -1,8 +1,9 @@
 import Image from "next/image";
 import { Character } from '../../../../interfaces/characterInterface';
+import getOneCharacter from "@/Data/funtions/FetchData/getOneCharacter";
 
-export default async function CharacterDetailPage(){
-    const character : Character;
+export default async function CharacterDetailPage({params} : {params: {id: string}}){
+    const character : Character = await getOneCharacter(params.id);
     return(
      <div className="flex flex-wrap">
             <Image src={""} alt={""}/>
