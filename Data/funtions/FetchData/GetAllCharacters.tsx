@@ -1,8 +1,9 @@
 import { Character } from "@/interfaces/characterInterface";
+import { rawCharacter } from "@/interfaces/rawCharacterInterface";
 
 
 export async function GetAllCharacters() {
-    const characters : Character[] = [];
+    const characters : rawCharacter[] = [];
     let currentPage= 1;
     
     while (true){
@@ -12,7 +13,7 @@ export async function GetAllCharacters() {
                 throw new Error(`HTTP error! status: ${res.status}`);
             }
             const data = await res.json();
-            characters.push(...data.results);
+            characters.push(...(data.results));
             if(data.next === null) break;
             currentPage++;
         } catch (error){
